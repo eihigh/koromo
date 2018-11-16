@@ -21,9 +21,9 @@ func (s Stm) HasElapsed(frames int) bool {
 	return s.count > frames
 }
 
-// Degree returns how much it reached of the goal
-func (s Stm) Degree(goal int) float64 {
-	return float64(s.count) / float64(goal)
+// Ratio returns count / base
+func (s Stm) Ratio(base int) float64 {
+	return float64(s.count) / float64(base)
 }
 
 // Reset resets the count
