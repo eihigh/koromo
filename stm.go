@@ -16,6 +16,11 @@ func (s Stm) Elapsed() int {
 	return s.count
 }
 
+// HasElapsed reports the time has elapsed or not
+func (s Stm) HasElapsed(frames int) bool {
+	return s.count > frames
+}
+
 // Reset resets the count
 func (s *Stm) Reset() {
 	s.count = 0
