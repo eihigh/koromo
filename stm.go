@@ -6,6 +6,11 @@ type Stm struct {
 	state int
 }
 
+// Update increments the count
+func (s *Stm) Update() {
+	s.count++
+}
+
 // Current returns current state
 func (s Stm) Current() int {
 	return s.state
@@ -21,8 +26,8 @@ func (s Stm) HasElapsed(frames int) bool {
 	return s.count > frames
 }
 
-// Ratio returns count / base
-func (s Stm) Ratio(base int) float64 {
+// ElapsedRatio returns count / base
+func (s Stm) ElapsedRatio(base int) float64 {
 	return float64(s.count) / float64(base)
 }
 
